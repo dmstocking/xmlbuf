@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 81e2a59e40e0a19b8d90c4516dc65aa91916885bcbaaee6e3c903402aefd4dca
+
+name:           xmlbuf
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/dmstocking/xmlbuf#readme>
+homepage:       https://github.com/dmstocking/xmlbuf#readme
+bug-reports:    https://github.com/dmstocking/xmlbuf/issues
+author:         David Stocking
+maintainer:     dmstocking@gmail.com
+copyright:      2019 David Stocking
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dmstocking/xmlbuf
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_xmlbuf
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable xmlbuf-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_xmlbuf
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , xmlbuf
+  default-language: Haskell2010
+
+test-suite xmlbuf-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_xmlbuf
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , xmlbuf
+  default-language: Haskell2010
